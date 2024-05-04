@@ -19,4 +19,9 @@ class Block extends Model
     {
         return hash('sha256', $this->id . $this->data . $this->prev_hash . $this->created_at->timestamp);
     }
+
+    public function blockchain()
+    {
+        return $this->belongsTo(Blockchain::class);
+    }
 }

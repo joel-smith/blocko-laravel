@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('blockchain_id');
             $table->string('data');
             $table->string('prev_hash');
             $table->string('hash');
